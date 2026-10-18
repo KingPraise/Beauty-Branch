@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Brand Palette: Warm Ivory, Champagne Gold, Rose Bronze, Espresso Black */
+    --background: #FCF9F5;
+    --foreground: #221815;
+    --card: #FFFFFF;
+    --card-foreground: #221815;
+    --primary: #9C5861; /* Rich Rose Gold / Mauve */
+    --primary-hover: #86464F;
+    --accent-gold: #C59B51; /* Warm Champagne Gold */
+    --accent-gold-soft: #F4EBD9;
+    --muted: #6E5F5A;
+    --muted-light: #F2ECE5;
+    --border: #E8DED3;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Subtle luxury shimmer effects */
+.gold-gradient {
+  background: linear-gradient(135deg, #C59B51 0%, #E6C88A 50%, #B88B3D 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #A8792A 0%, #D8AB56 50%, #9E7025 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rose-gradient {
+  background: linear-gradient(135deg, #9C5861 0%, #B76E79 100%);
+}
+
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid #EFE6DC;
+  box-shadow: 0 4px 20px -2px rgba(156, 88, 97, 0.05);
+  transition: all 0.25s ease-in-out;
+}
+
+.luxury-card:hover {
+  border-color: #DBC8B5;
+  box-shadow: 0 10px 30px -4px rgba(156, 88, 97, 0.12);
+  transform: translateY(-2px);
 }
