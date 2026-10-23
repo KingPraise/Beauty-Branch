@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Sparkles, Clock, Heart } from "lucide-react";
 import { BRAND_CONFIG } from "@/data/siteData";
 
@@ -19,12 +20,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#332420]/80">
           {/* Brand Col */}
           <div className="space-y-4">
-            <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
-              Beauty Branch
-            </h3>
-            <p className="text-xs uppercase tracking-widest text-[#C59B51] font-semibold">
-              {BRAND_CONFIG.tagline}
-            </p>
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#C59B51] shrink-0">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Beauty Branch Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
+                  Beauty Branch
+                </h3>
+                <p className="text-[10px] uppercase tracking-widest text-[#C59B51] font-semibold">
+                  {BRAND_CONFIG.tagline}
+                </p>
+              </div>
+            </div>
             <p className="text-sm text-[#BFB3A8] leading-relaxed">
               With over 10 years of hairstyling mastery, we provide premium, gentle, and long-lasting hair artistry tailored to bring out your confidence and natural radiance.
             </p>

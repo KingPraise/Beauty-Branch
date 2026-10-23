@@ -173,10 +173,15 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.7 }}
-                className="absolute -top-5 -right-3 sm:-right-6 z-30 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-[#E8DED3] flex items-center gap-3"
+                className="absolute -top-5 -right-3 sm:-right-6 z-30 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-[#E8DED3] flex items-center gap-3"
               >
-                <div className="w-9 h-9 rounded-full bg-[#9C5861] text-[#FAF5EE] flex items-center justify-center font-serif font-bold text-sm">
-                  J
+                <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#C59B51] shrink-0">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="Beauty Branch Stylist Brand"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-semibold text-[#221815]">Janneatte</div>

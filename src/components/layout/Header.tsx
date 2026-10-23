@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Sparkles, Phone, Calendar } from "lucide-react";
 import { BRAND_CONFIG } from "@/data/siteData";
 
@@ -43,13 +44,24 @@ export function Header() {
 
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <Link href="/" className="flex flex-col group">
-          <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#221815] group-hover:text-[#9C5861] transition-colors">
-            Beauty Branch
-          </span>
-          <span className="text-[10px] sm:text-xs tracking-widest uppercase font-medium text-[#C59B51] -mt-1">
-            Where Beauty Meets Excellence
-          </span>
+        <Link href="/" className="flex items-center gap-3.5 group">
+          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#C59B51] shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/images/logo.jpg"
+              alt="Beauty Branch Logo"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#221815] group-hover:text-[#9C5861] transition-colors">
+              Beauty Branch
+            </span>
+            <span className="text-[10px] sm:text-xs tracking-widest uppercase font-medium text-[#C59B51] -mt-0.5">
+              Where Beauty Meets Excellence
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
